@@ -1,5 +1,5 @@
 {
-  "name": "js-utils",
+  "name": "@straylightagency/utils",
   "version": "1.0.0",
   "description": "Some JavaScript utilities functions",
   "type": "module",
