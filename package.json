@@ -15,5 +15,13 @@
   "devDependencies": {},
   "keywords": [],
   "author": "Anthony Pauwels (anthony@straylightagency.be)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/straylightagency/js-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/straylightagency/js-utils/issues"
+  },
+  "homepage": "https://github.com/straylightagency/js-utils#readme"
 }
