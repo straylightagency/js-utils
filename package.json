@@ -1,0 +1,19 @@
+{
+  "name": "js-utils",
+  "version": "1.0.0",
+  "description": "Some JavaScript utilities functions",
+  "type": "module",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [],
+  "author": "Anthony Pauwels (anthony@straylightagency.be)",
+  "license": "MIT"
+}
