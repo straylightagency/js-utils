@@ -1,11 +1,17 @@
 {
   "name": "@straylightagency/utils",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Some JavaScript utilities functions",
   "type": "module",
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
+    "./array": "./src/array/index.js",
+    "./date": "./src/date/index.js",
+    "./dom": "./src/dom/index.js",
+    "./misc": "./src/misc/index.js",
+    "./object": "./src/object/index.js",
+    "./string": "./src/string/index.js",
     "./*": "./src/*"
   },
   "files": [
