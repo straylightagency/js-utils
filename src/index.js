@@ -11,6 +11,7 @@ export { default as addEventListeners } from "./dom/addEventListeners.js";
 export { default as closestElement } from "./dom/closestElement.js";
 export { default as delegate } from "./dom/delegate.js";
 export { default as getFieldsValues } from "./dom/getFieldsValues.js";
+export { default as getElementSizing } from "./dom/getElementSizing.js";
 export { default as onEachElements } from "./dom/onEachElements.js";
 export { default as unlessElementExists } from "./dom/unlessElementExists.js";
 export { default as whenReady } from "./dom/whenReady.js";
