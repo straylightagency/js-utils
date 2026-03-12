@@ -13,7 +13,7 @@ export default {
     wait,
     seconds,
     milliseconds,
+    isClass,
     isObject,
     isPlainObject,
-    isClass,
 };
