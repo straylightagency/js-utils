@@ -1,5 +1,1 @@
-import getWeekNumber from "./getWeekNumber.js";
-
-export default {
-    getWeek: getWeekNumber,
-}
+export { default as getWeekNumber } from "./getWeekNumber.js";

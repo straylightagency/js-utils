@@ -1,15 +1,12 @@
-import clipboard from "./clipboard.js";
-import debounce from "./debounce.js";
-import nextTick from "./nextTick.js";
-import throttle from "./throttle.js";
+export { default as clipboard } from "./clipboard.js";
+export { default as debounce } from "./debounce.js";
+export { default as nextTick } from "./nextTick.js";
+export { default as throttle } from "./throttle.js";
+
 import {wait, seconds, milliseconds} from "./wait.js";
 import {isClass, isObject, isPlainObject} from "./is.js";
 
-export default {
-    clipboard,
-    debounce,
-    nextTick,
-    throttle,
+export {
     wait,
     seconds,
     milliseconds,

@@ -1,7 +1,2 @@
-import capitalize from "./capitalize.js";
-import serialize from "./serialize.js";
-
-export default {
-    capitalize,
-    serialize,
-};
+export { default as capitalize } from "./capitalize.js";
+export { default as serialize } from "./serialize.js";

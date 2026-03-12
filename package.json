@@ -1,6 +1,6 @@
 {
   "name": "@straylightagency/utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Some JavaScript utilities functions",
   "type": "module",
   "main": "src/index.js",
@@ -11,8 +11,7 @@
     "./dom": "./src/dom/index.js",
     "./misc": "./src/misc/index.js",
     "./object": "./src/object/index.js",
-    "./string": "./src/string/index.js",
-    "./*": "./src/*"
+    "./string": "./src/string/index.js"
   },
   "files": [
     "src"

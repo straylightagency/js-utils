@@ -1,9 +1,3 @@
-import filter from "./filter.js";
-import map from "./map.js";
-import only from "./only.js";
-
-export default {
-    filter,
-    map,
-    only,
-};
+export { default as filter } from "./filter.js";
+export { default as map } from "./map.js";
+export { default as only } from "./only.js";
