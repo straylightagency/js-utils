@@ -1,10 +1,10 @@
 /**
  * @param selectorOrParent {String|HTMLElement}
- * @param callbackOrSelector {Function|HTMLElement}
- * @param callbackOrNull {Function|undefined}
+ * @param callbackOrSelector {Function|String}
+ * @param callbackOrNull {Function|null}
  * @returns {*}
  */
-export default function onEachElements(selectorOrParent, callbackOrSelector, callbackOrNull) {
+export default function onEachElements(selectorOrParent, callbackOrSelector, callbackOrNull = null) {
     if ( typeof selectorOrParent === 'string' && typeof callbackOrSelector === 'function' && typeof callbackOrNull !== 'function' ) {
         const elements = document.querySelectorAll( selectorOrParent );
 
