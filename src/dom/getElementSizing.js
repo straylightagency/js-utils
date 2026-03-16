@@ -1,23 +1,19 @@
 /**
  * @param element {HTMLElement}
- * @returns {DOMRect}
+ * @returns {{width: *, height: *, offsetWidth: *, offsetHeight: *, top: number, left: number, bottom: number, right: number,
+ *            x: number, y: number, marginLeft: number, marginTop: number, marginBottom: number, marginRight: number,
+ *            paddingLeft: number, paddingTop: number, paddingBottom: number, paddingRight: number}}
  */
 export default function getElementSizing(element) {
-    const el_style = window.getComputedStyle( element );
-    const el_display = el_style.display;
-    const el_position = el_style.position;
-    const el_visibility = el_style.visibility;
-    const el_max_height = el_style.maxHeight.replace('px', '').replace('%', '');
-    let width, height;
+    const style = window.getComputedStyle( element );
+    const display = style.display;
+    const position = style.position;
+    const visibility = style.visibility;
+    const max_height = style.maxHeight.replace('px', '').replace('%', '');
 
     /** if it's not hidden we just return normal height */
-    if ( el_display !== 'none' && el_max_height !== '0' ) {
-        width = element.offsetWidth + parseInt( el_style.marginLeft, 10 ) + parseInt( el_style.marginRight, 10 );
-        height = element.offsetHeight + parseInt( el_style.marginTop, 10 ) + parseInt( el_style.marginBottom, 10 );
-
-        const rect = element.getBoundingClientRect();
-
-        return Object.assign( rect, { width, height } );
+    if ( display !== 'none' && max_height !== '0' ) {
+        return getSizing( element );
     }
 
     /** the element is hidden, so we are making the element block, so we can measure its height but still be hidden */
@@ -25,15 +21,47 @@ export default function getElementSizing(element) {
     element.style.visibility = 'hidden';
     element.style.display    = 'block';
 
-    width = element.offsetWidth + parseInt( el_style.marginLeft, 10 ) + parseInt( el_style.marginRight, 10 );
-    height = element.offsetHeight + parseInt( el_style.marginTop, 10 ) + parseInt( el_style.marginBottom, 10 );
-
-    const rect = element.getBoundingClientRect();
+    const sizing = getSizing( element );
 
     /** reverting to the original values */
-    element.style.display = el_display;
-    element.style.position = el_position === 'static' ? null : el_position;
-    element.style.visibility = el_visibility === 'visible' ? null : el_visibility;
+    element.style.display = display;
+    element.style.position = position === 'static' ? null : position;
+    element.style.visibility = visibility === 'visible' ? null : visibility;
 
-    return Object.assign( rect, { width, height } );
+    return sizing;
+}
+
+/**
+ * @param element {HTMLElement}
+ * @returns {{width: *, height: *, offsetWidth: *, offsetHeight: *, top: number, left: number, bottom: number, right: number,
+ *            x: number, y: number, marginLeft: number, marginTop: number, marginBottom: number, marginRight: number,
+ *            paddingLeft: number, paddingTop: number, paddingBottom: number, paddingRight: number}}
+ */
+function getSizing(element) {
+    const style = window.getComputedStyle( element );
+    const rect = element.getBoundingClientRect();
+
+    const width = element.offsetWidth + parseInt( style.marginLeft, 10 ) + parseInt( style.marginRight, 10 );
+    const height = element.offsetHeight + parseInt( style.marginTop, 10 ) + parseInt( style.marginBottom, 10 );
+
+    return {
+        width,
+        height,
+        offsetWidth: element.offsetWidth,
+        offsetHeight: element.offsetHeight,
+        top: rect.top,
+        left: rect.left,
+        bottom: rect.bottom,
+        right: rect.right,
+        x: rect.x,
+        y: rect.y,
+        marginLeft: style.marginLeft,
+        marginTop: style.marginTop,
+        marginBottom: style.marginBottom,
+        marginRight: style.marginRight,
+        paddingLeft: style.paddingLeft,
+        paddingTop: style.paddingTop,
+        paddingBottom: style.paddingBottom,
+        paddingRight: style.paddingRight,
+    };
 }

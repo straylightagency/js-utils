@@ -1,6 +1,6 @@
 {
   "name": "@straylightagency/utils",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Some JavaScript utilities functions",
   "type": "module",
   "main": "src/index.js",
