@@ -13,7 +13,7 @@ export default function getElementSizing(element) {
 
     /** if it's not hidden we just return normal height */
     if ( display !== 'none' && max_height !== '0' ) {
-        return getSizing( element );
+        return getSizing( element, style );
     }
 
     /** the element is hidden, so we are making the element block, so we can measure its height but still be hidden */
@@ -21,7 +21,7 @@ export default function getElementSizing(element) {
     element.style.visibility = 'hidden';
     element.style.display    = 'block';
 
-    const sizing = getSizing( element );
+    const sizing = getSizing( element, style );
 
     /** reverting to the original values */
     element.style.display = display;
@@ -33,16 +33,21 @@ export default function getElementSizing(element) {
 
 /**
  * @param element {HTMLElement}
+ * @param style {CSSStyleDeclaration}
  * @returns {{width: *, height: *, offsetWidth: *, offsetHeight: *, top: number, left: number, bottom: number, right: number,
  *            x: number, y: number, marginLeft: number, marginTop: number, marginBottom: number, marginRight: number,
  *            paddingLeft: number, paddingTop: number, paddingBottom: number, paddingRight: number}}
  */
-function getSizing(element) {
-    const style = window.getComputedStyle( element );
+function getSizing(element, style) {
     const rect = element.getBoundingClientRect();
 
-    const width = element.offsetWidth + parseInt( style.marginLeft, 10 ) + parseInt( style.marginRight, 10 );
-    const height = element.offsetHeight + parseInt( style.marginTop, 10 ) + parseInt( style.marginBottom, 10 );
+    const marginX = parseInt( style.marginLeft, 10 ) + parseInt( style.marginRight, 10 );
+    const marginY = parseInt( style.marginTop, 10 ) + parseInt( style.marginBottom, 10 );
+    const paddingX = parseInt( style.paddingLeft, 10 ) + parseInt( style.paddingRight, 10 );
+    const paddingY = parseInt( style.paddingTop, 10 ) + parseInt( style.paddingBottom, 10 );
+
+    const width = element.offsetWidth + marginX;
+    const height = element.offsetHeight + marginY;
 
     return {
         width,
@@ -55,13 +60,17 @@ function getSizing(element) {
         right: rect.right,
         x: rect.x,
         y: rect.y,
-        marginLeft: style.marginLeft,
-        marginTop: style.marginTop,
-        marginBottom: style.marginBottom,
-        marginRight: style.marginRight,
-        paddingLeft: style.paddingLeft,
-        paddingTop: style.paddingTop,
-        paddingBottom: style.paddingBottom,
-        paddingRight: style.paddingRight,
+        marginLeft: parseInt( style.marginLeft ),
+        marginTop: parseInt( style.marginTop ),
+        marginBottom: parseInt( style.marginBottom ),
+        marginRight: parseInt( style.marginRight ),
+        marginX,
+        marginY,
+        paddingLeft: parseInt( style.paddingLeft ),
+        paddingTop: parseInt( style.paddingTop ),
+        paddingBottom: parseInt( style.paddingBottom ),
+        paddingRight: parseInt( style.paddingRight ),
+        paddingX,
+        paddingY,
     };
 }
