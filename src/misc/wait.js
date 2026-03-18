@@ -1,5 +1,7 @@
 /**
- * @param timeMs {Number}
+ * Stop the main process for a moment defined in milliseconds.
+ *
+ * @param {number} timeMs
  * @returns {Promise<unknown>}
  */
 export function wait(timeMs) {
@@ -7,7 +9,9 @@ export function wait(timeMs) {
 }
 
 /**
- * @param time {Number}
+ * Stop the main process for a moment defined in seconds.
+ *
+ * @param {number} time
  * @returns {Promise<*>}
  */
 export function seconds(time) {
@@ -15,7 +19,9 @@ export function seconds(time) {
 }
 
 /**
- * @param timeMs {Number}
+ * Alias to `wait`. Stop the main process for a moment defined in milliseconds.
+ *
+ * @param {number} timeMs
  * @returns {Promise<*>}
  */
 export function milliseconds(timeMs) {

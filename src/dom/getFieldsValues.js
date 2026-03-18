@@ -1,5 +1,7 @@
 /**
- * @param form {HTMLFormElement}
+ * Get an array of the fields value of an HTMLFormElement.
+ *
+ * @param {HTMLFormElement} form
  * @returns {{[p: string]: *}}
  */
 export default function (form) {

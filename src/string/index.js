@@ -1,2 +1,4 @@
-export { default as capitalize } from "./capitalize.js";
-export { default as serialize } from "./serialize.js";
+export { default as capitalFirst } from "./capitalFirst.js";
+export { default as capitalWords } from "./capitalWords.js";
+export { default as slugify } from "./slugify.js";
+export { default as interpolate } from "./interpolate.js";

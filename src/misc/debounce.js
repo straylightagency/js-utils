@@ -1,9 +1,9 @@
 /**
- * Execute callback once if called many times during a defined delay
+ * Execute callback once if called many times during a defined delay.
  *
- * @param callbackFn {Function}
- * @param delay {Number}
- * @param immediate {Boolean}
+ * @param {Function} callbackFn
+ * @param {number} delay
+ * @param {boolean} immediate
  * @returns {(function(): void)|*}
  */
 export default function debounce(callbackFn, delay, immediate = false) {

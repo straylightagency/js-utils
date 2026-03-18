@@ -1,5 +1,7 @@
 /**
- * @param element {HTMLElement}
+ * Get an object with every sizing values of an HTMLElement. Tricks the browser to get values if the element is hidden.
+ *
+ * @param {HTMLElement} element
  * @returns {{width: *, height: *, offsetWidth: *, offsetHeight: *, top: number, left: number, bottom: number, right: number,
  *            x: number, y: number, marginLeft: number, marginTop: number, marginBottom: number, marginRight: number,
  *            paddingLeft: number, paddingTop: number, paddingBottom: number, paddingRight: number}}

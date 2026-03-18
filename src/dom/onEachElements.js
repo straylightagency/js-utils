@@ -1,7 +1,13 @@
 /**
- * @param selectorOrParent {String|HTMLElement}
- * @param callbackOrSelector {Function|String}
- * @param callbackOrNull {Function|null}
+ * Execute a callback on each selected HTMLElements. These elements can be reached through a parent.
+ * The function returns a NodeList at the end.
+ *
+ * @example onEachElements('nav .links', links => {...})
+ * @example onEachElements(nav, '.links', links => {...})
+ *
+ * @param {string|HTMLElement} selectorOrParent
+ * @param {Function|string} callbackOrSelector
+ * @param {Function|null} callbackOrNull
  * @returns {*}
  */
 export default function onEachElements(selectorOrParent, callbackOrSelector, callbackOrNull = null) {
@@ -11,6 +17,14 @@ export default function onEachElements(selectorOrParent, callbackOrSelector, cal
         elements.forEach( callbackOrSelector );
 
         return elements;
+    }
+
+    if ( typeof selectorOrParent === 'string' ) {
+        selectorOrParent = document.querySelector( selectorOrParent );
+    }
+
+    if ( ! selectorOrParent ) {
+        return;
     }
 
     const elements = selectorOrParent.querySelectorAll( callbackOrSelector );

@@ -1,26 +1,32 @@
 const toString = Object.prototype.toString;
 
 /**
- * @param obj
+ * Check if parameter is an object.
+ *
+ * @param {*} object
  * @returns {boolean}
  */
-export function isObject(obj) {
-    return obj !== null && typeof obj === 'object'
+export function isObject(object) {
+    return object !== null && typeof object === 'object'
 }
 
 /**
- * @param obj
- * @param className
+ * Check if parameter is the given className.
+ *
+ * @param {*} object
+ * @param {string} className
  * @returns {boolean}
  */
-export function isClass(obj, className) {
-    return isObject( obj ) && toString.call( obj ) === '[object ' + className + ']';
+export function isClass(object, className) {
+    return isObject( object ) && toString.call( object ) === '[object ' + className + ']';
 }
 
 /**
- * @param obj
+ * Check if parameter is a plain object.
+ *
+ * @param {*} object
  * @returns {boolean}
  */
-export function isPlainObject(obj) {
-    return isClass( obj, 'Object' );
+export function isPlainObject(object) {
+    return isClass( object, 'Object' );
 }

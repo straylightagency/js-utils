@@ -1,5 +1,5 @@
 /**
- * Return the array without the last element
+ * Return the array without the last element.
  *
  * @param array {[]}
  * @returns {array}

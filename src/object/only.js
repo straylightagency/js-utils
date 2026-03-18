@@ -1,6 +1,8 @@
 /**
- * @param object {{}}
- * @param keys {[]}
+ * Return an object with specified keys.
+ *
+ * @param {{}} object
+ * @param {[]} keys
  * @returns {{}}
  */
 export default function only(object, keys) {

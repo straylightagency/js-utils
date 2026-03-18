@@ -1,12 +1,14 @@
 /**
- * @param text {String}
+ * Push the given string parameter into the clipboard. Use a polyfill if the new 'navigator.clipboard' is not available.
+ *
+ * @param {string} string
  * @returns {Promise<void>}
  */
-export default async function clipboard(text) {
-    if ( typeof ( navigator.clipboard ) == 'undefined' ) {
+export default async function clipboard(string) {
+    if ( typeof navigator.clipboard === 'undefined' ) {
         await new Promise( () => {
             const textArea = document.createElement("textarea");
-            textArea.value = text;
+            textArea.value = string;
             textArea.style.position = "fixed";  //avoid scrolling to bottom
             document.body.appendChild( textArea );
             textArea.focus();
@@ -18,6 +20,6 @@ export default async function clipboard(text) {
         } );
 
     } else {
-        await navigator.clipboard.writeText( text );
+        await navigator.clipboard.writeText( string );
     }
 }

@@ -1,6 +1,15 @@
 /**
- * @param element {HTMLElement}
- * @param listeners {{}}
+ * Define event listeners on an element and returns an object with a callback for removing these listeners on each event.
+ *
+ * @example const removeListeners = addEventListeners(button, {
+ *     click: (event) => {...},
+ *     mouseover: (event) => {...},
+ * } );
+ * removeListeners.click();
+ * => click event has been removed from the button
+ *
+ * @param {HTMLElement} element
+ * @param {{}} listeners
  */
 export default function addEventListeners(element, listeners) {
     Object.fromEntries(

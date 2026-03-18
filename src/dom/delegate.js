@@ -1,7 +1,10 @@
 /**
- * @param selector {String}
- * @param event {String}
- * @param handler {Function}
+ * Delegate an event through the Document to a selected element. Useful to define an event on an element which is not already created.
+ * Returns a callback function that can be used to remove the event listener from the Document.
+ *
+ * @param {string} selector
+ * @param {string} event
+ * @param {Function} handler
  * @returns {function(): any}
  */
 export default function delegate(selector, event, handler) {

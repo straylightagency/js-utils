@@ -1,6 +1,8 @@
 /**
- * @param array {[]}
- * @param value {*}
+ * Remove a value from the given array, returning a copy.
+ *
+ * @param {[]} array
+ * @param {*} value
  * @returns {*}
  */
 export default function remove(array, value) {

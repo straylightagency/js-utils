@@ -1,8 +1,8 @@
 /**
- * Limit the number of times a callback gets called in a certain time period
+ * Limit the number of times a callback gets called in a certain time period.
  *
- * @param callbackFn {Function}
- * @param delay {Number}
+ * @param {Function} callbackFn
+ * @param {number} delay
  * @returns {(function(): void)|*}
  */
 export default function throttle(callbackFn, delay) {

@@ -1,5 +1,7 @@
 /**
- * @param array {[]}
+ * Return the last element of an array.
+ *
+ * @param {[]} array
  * @returns {*|undefined}
  */
 export default function last(array) {

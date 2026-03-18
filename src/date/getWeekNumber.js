@@ -1,5 +1,10 @@
 /**
- * @param date {Date}
+ * Get the week number of a Date object from the start of the year.
+ *
+ * @example getWeekNumber( new Date('Mon Mar 16 2026') )
+ * => 12
+ *
+ * @param {Date} date
  * @returns {number}
  */
 export default function getWeekNumber(date) {
