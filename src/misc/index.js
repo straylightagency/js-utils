@@ -5,6 +5,7 @@ export { default as throttle } from "./throttle.js";
 export { default as attempt } from "./attempt.js";
 export { default as retry } from "./retry.js";
 export { default as reviver } from "./reviver.js";
+export { default as replacer } from "./replacer.js";
 
 import {wait, seconds, milliseconds} from "./wait.js";
 import {isClass, isObject, isPlainObject} from "./is.js";
@@ -19,5 +20,5 @@ export {
     isPlainObject,
     decodeBase64,
     encodeBase64,
-    isBase64
+    isBase64,
 };

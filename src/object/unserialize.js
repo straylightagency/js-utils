@@ -1,5 +1,5 @@
-import {reviver as dateReviver} from '../date/reviver.js'
-import {reviver as functionReviver} from '../misc/reviver.js'
+import dateReviver from '../date/reviver.js'
+import functionReviver from '../misc/reviver.js'
 
 /**
  * Serialize an object into a string, handling functions and Date objects.

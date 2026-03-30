@@ -17,6 +17,7 @@ export { default as debounce } from "./misc/debounce.js";
 export { default as nextTick } from "./misc/nextTick.js";
 export { default as throttle } from "./misc/throttle.js";
 export { default as functionReviver } from "./misc/reviver.js";
+export { default as functionReplacer } from "./misc/replacer.js";
 export { default as addEventListeners } from "./dom/addEventListeners.js";
 export { default as closestElement } from "./dom/closestElement.js";
 export { default as delegate } from "./dom/delegate.js";

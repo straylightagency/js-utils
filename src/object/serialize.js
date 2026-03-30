@@ -1,3 +1,5 @@
+import replacer from "../misc/replacer.js";
+
 /**
  * Serialize an object into a string, transforms functions into string.
  *
@@ -8,5 +10,5 @@
  * @returns {String}
  */
 export default function serialize(object) {
-    return JSON.stringify( object, (key, value) => typeof value === 'function' ? value.toString : value );
+    return JSON.stringify( object, replacer );
 }
