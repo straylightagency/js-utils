@@ -1,4 +1,4 @@
-import get from "./get";
+import get from "./get.js";
 
 /**
  * Get a value using a dot-notated key string

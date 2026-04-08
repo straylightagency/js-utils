@@ -6,15 +6,13 @@ export { default as attempt } from "./attempt.js";
 export { default as retry } from "./retry.js";
 export { default as reviver } from "./reviver.js";
 export { default as replacer } from "./replacer.js";
+export { default as seconds } from "./seconds.js";
+export { default as milliseconds } from "./milliseconds.js";
 
-import {wait, seconds, milliseconds} from "./wait.js";
 import {isClass, isObject, isPlainObject} from "./is.js";
 import {decodeBase64, encodeBase64, isBase64} from "./base64.js";
 
 export {
-    wait,
-    seconds,
-    milliseconds,
     isClass,
     isObject,
     isPlainObject,
