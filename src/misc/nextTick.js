@@ -6,7 +6,8 @@
  */
 export default async function nextTick(callbackFn) {
     return new Promise(
-        async resolve => requestIdleCallback( () => async () => resolve( await callbackFn() )
+        async resolve => requestIdleCallback( () =>
+            setTimeout( async () => resolve( await callbackFn() ), 0 )
         )
     );
 }

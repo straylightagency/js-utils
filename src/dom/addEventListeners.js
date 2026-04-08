@@ -12,7 +12,7 @@
  * @param {{}} listeners
  */
 export default function addEventListeners(element, listeners) {
-    Object.fromEntries(
+    return Object.fromEntries(
         Object.entries( listeners ).map( ([event, callbackFn]) => {
             element.addEventListener( event, callbackFn );
 
