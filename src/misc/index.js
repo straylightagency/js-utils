@@ -8,6 +8,7 @@ export { default as reviver } from "./reviver.js";
 export { default as replacer } from "./replacer.js";
 export { default as seconds } from "./seconds.js";
 export { default as milliseconds } from "./milliseconds.js";
+export { default as restoreBooleanAfter } from "./restoreBooleanAfter.js";
 
 import {isClass, isObject, isPlainObject} from "./is.js";
 import {decodeBase64, encodeBase64, isBase64} from "./base64.js";

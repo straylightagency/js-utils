@@ -17,6 +17,7 @@ export { default as debounce } from "./misc/debounce.js";
 export { default as nextTick } from "./misc/nextTick.js";
 export { default as seconds } from "./misc/seconds.js";
 export { default as milliseconds } from "./misc/milliseconds.js";
+export { default as restoreBooleanAfter } from "./misc/restoreBooleanAfter.js";
 export { default as throttle } from "./misc/throttle.js";
 export { default as functionReviver } from "./misc/reviver.js";
 export { default as functionReplacer } from "./misc/replacer.js";
