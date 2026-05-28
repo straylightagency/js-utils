@@ -2,7 +2,7 @@
  * Function that can be used with JSON.parse to revive functions.
  *
  * @param {*} value
- * @returns {*|undefined}
+ * @returns {*}
  */
 export default function reviver(value) {
     if ( typeof value === 'string' && value.indexOf('function ') === 0 ) {
