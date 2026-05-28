@@ -6,6 +6,8 @@
  */
 export default function reviver(value) {
     if ( typeof value === 'string' && value.indexOf('function ') === 0 ) {
-        return eval( `(${value})` );
+        return new Function(`return ${value}`)();
     }
+
+    return value;
 }

@@ -30,6 +30,7 @@ export { default as onEachElements } from "./dom/onEachElements.js";
 export { default as unlessElementExists } from "./dom/unlessElementExists.js";
 export { default as whenReady } from "./dom/whenReady.js";
 export { default as whenResize } from "./dom/whenResize.js";
+export { default as whenScroll } from "./dom/whenScroll.js";
 export { default as getWeekNumber } from "./date/getWeekNumber.js";
 export { default as clone } from "./date/clone.js";
 export { default as dateReviver } from "./date/reviver.js";

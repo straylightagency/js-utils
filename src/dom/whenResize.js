@@ -1,18 +1,27 @@
 /**
- * Execute the given callback when the window is resized. Second parameter allows to run the callback immediately.
+ * Listen when the window is resized. Returned an array with two methods:
+ * - init() : callback is called immediately with width and height values
+ * - cancel() : cancel the event listener
  *
  * @param {Function} callbackFn
- * @param {boolean} init
+ * @returns {[]}
  */
-export default function whenResize(callbackFn, init = true) {
-    let ww = window.innerWidth, wh = window.innerHeight;
+export default function whenResize(callbackFn) {
+    let ww, wh;
 
-    window.addEventListener( 'resize', () => {
+    const wrappedFn = e => {
         ww = window.innerWidth;
         wh = window.innerHeight;
 
-        callbackFn( { ww, wh } );
-    } );
+        callbackFn( { ww, wh }, e );
+    };
 
-    init ? callbackFn( { ww, wh } ) : null;
+    window.addEventListener( 'resize', wrappedFn );
+
+    const init = () => wrappedFn();
+    const cancel = () => window.removeEventListener( 'resize', wrappedFn );
+
+    return [
+        init, cancel
+    ];
 }
