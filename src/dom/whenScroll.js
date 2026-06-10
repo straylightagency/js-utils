@@ -4,9 +4,10 @@
  * - cancel() : cancel the event listener
  *
  * @param {Function} callbackFn
+ * @param {boolean} immediately
  * @returns {[]}
  */
-export default function whenScroll(callbackFn) {
+export default function whenScroll(callbackFn, immediately = true) {
     let x, y;
 
     const wrappedFn = e => {
@@ -20,6 +21,10 @@ export default function whenScroll(callbackFn) {
 
     const init = () => wrappedFn();
     const cancel = () => document.removeEventListener( 'scroll', wrappedFn );
+
+    if ( immediately ) {
+        init();
+    }
 
     return [
         init, cancel

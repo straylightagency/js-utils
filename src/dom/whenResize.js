@@ -4,9 +4,10 @@
  * - cancel() : cancel the event listener
  *
  * @param {Function} callbackFn
+ * @param {boolean} immediately
  * @returns {[]}
  */
-export default function whenResize(callbackFn) {
+export default function whenResize(callbackFn, immediately = true) {
     let ww, wh;
 
     const wrappedFn = e => {
@@ -20,6 +21,10 @@ export default function whenResize(callbackFn) {
 
     const init = () => wrappedFn();
     const cancel = () => window.removeEventListener( 'resize', wrappedFn );
+
+    if ( immediately ) {
+        init();
+    }
 
     return [
         init, cancel
