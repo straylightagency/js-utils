@@ -13,6 +13,7 @@ export { default as get } from "./object/get.js";
 export { default as set } from "./object/set.js";
 export { default as has } from "./object/has.js";
 export { default as clipboard } from "./misc/clipboard.js";
+export { default as match } from "./misc/match.js";
 export { default as debounce } from "./misc/debounce.js";
 export { default as nextTick } from "./misc/nextTick.js";
 export { default as seconds } from "./misc/seconds.js";
@@ -37,6 +38,7 @@ export { default as dateReviver } from "./date/reviver.js";
 export { default as initial } from "./array/initial.js";
 export { default as last } from "./array/last.js";
 export { default as remove } from "./array/remove.js";
+export { default as replace } from "./array/replace.js";
 
 import {isClass, isObject, isPlainObject} from "./misc/is.js";
 import {decodeBase64, encodeBase64, isBase64} from "./misc/base64.js";
