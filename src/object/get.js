@@ -9,5 +9,5 @@
  * @returns {*}
  */
 export default function (object, keys) {
-    return keys.split('.').reduce( ( acc, prop ) => acc[ prop ], object );
+    return keys.split('.').reduce( ( acc, prop ) => acc[ prop ] || undefined, object );
 }
