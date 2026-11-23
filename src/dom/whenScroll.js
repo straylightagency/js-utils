@@ -1,14 +1,17 @@
 /**
- * Listen when the window document is scrolled. Returned an array with two methods:
- * - init() : callback is called immediately
- * - cancel() : cancel the event listener
+ * Listen when the window document is scrolled. Return a callback to cancel the event listener.
  *
  * @param {Function} callbackFn
  * @param {boolean} immediately
- * @returns {[]}
+ * @param {Document|HTMLElement} container
+ * @returns {function(): void}
  */
-export default function whenScroll(callbackFn, immediately = true) {
+export default function whenScroll(callbackFn, immediately = true, container = undefined) {
     let x, y;
+
+    if ( ! container ) {
+        container = document;
+    }
 
     const wrappedFn = e => {
         x = window.scrollX;
@@ -17,16 +20,11 @@ export default function whenScroll(callbackFn, immediately = true) {
         callbackFn( { x, y }, e );
     };
 
-    document.addEventListener( 'scroll', wrappedFn );
-
-    const init = () => wrappedFn();
-    const cancel = () => document.removeEventListener( 'scroll', wrappedFn );
+    container.addEventListener( 'scroll', wrappedFn );
 
     if ( immediately ) {
-        init();
+        wrappedFn();
     }
 
-    return [
-        init, cancel
-    ];
+    return () => container.removeEventListener( 'scroll', wrappedFn );
 }
