@@ -8,7 +8,7 @@
  * removeListeners.click();
  * => click event has been removed from the button
  *
- * @param {HTMLElement} element
+ * @param {EventTarget} element
  * @param {{}} listeners
  */
 export default function addEventListeners(element, listeners) {

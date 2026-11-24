@@ -3,7 +3,7 @@
  *
  * @param {Function} callbackFn
  * @param {boolean} immediately
- * @param {Document|HTMLElement} container
+ * @param {EventTarget} container
  * @returns {function(): void}
  */
 export default function whenResize(callbackFn, immediately = true, container = undefined) {
