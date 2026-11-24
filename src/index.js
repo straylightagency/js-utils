@@ -4,6 +4,7 @@ export { default as slugify } from "./string/slugify.js";
 export { default as interpolate } from "./string/interpolate.js";
 export { default as format } from "./number/format.js";
 export { default as random } from "./number/random.js";
+export { default as clamp } from "./number/clamp.js";
 export { default as filter } from "./object/filter.js";
 export { default as map } from "./object/map.js";
 export { default as only } from "./object/only.js";
