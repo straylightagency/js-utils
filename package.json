@@ -1,7 +1,7 @@
 {
   "name": "@straylightagency/utils",
   "version": "1.2.0",
-  "description": "Some JavaScript utilities functions",
+  "description": "A collection of lightweight JavaScript utility functions for everyday development.",
   "type": "module",
   "main": "src/index.js",
   "exports": {
