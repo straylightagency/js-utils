@@ -8,7 +8,7 @@
  * @param {String|HTMLElement} selectorOrParent
  * @param {Function|HTMLElement} callbackOrSelector
  * @param {Function|undefined} callbackOrNull
- * @returns {*}
+ * @returns {any}
  */
 export default function unlessElementExists(selectorOrParent, callbackOrSelector, callbackOrNull = null) {
     if ( typeof selectorOrParent === 'string' )  {

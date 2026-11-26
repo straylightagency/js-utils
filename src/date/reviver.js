@@ -1,7 +1,8 @@
 /**
  * Function that can be used with JSON.parse to revive Date objects.
  *
- * @param {*} value
+ * @deprecated
+ * @param {any} value
  * @returns {Date|*}
  */
 export default function reviver(value) {

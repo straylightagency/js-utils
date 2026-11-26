@@ -3,7 +3,7 @@ import milliseconds from "./milliseconds.js";
 /**
  * Stop the main process for a moment defined in seconds.
  *
- * @param {number} time
+ * @param {Number} time
  * @returns {Promise<*>}
  */
 export default function seconds(time) {

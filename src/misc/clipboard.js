@@ -1,7 +1,7 @@
 /**
  * Push the given string parameter into the clipboard. Use a polyfill if the new 'navigator.clipboard' is not available.
  *
- * @param {string} string
+ * @param {String} string
  * @returns {Promise<void>}
  */
 export default async function clipboard(string) {

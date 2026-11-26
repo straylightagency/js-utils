@@ -3,8 +3,8 @@
  *
  * @example const [result, error] = attempt(new Promise(...));
  *
- * @param {Promise} promise
- * @return {[]}
+ * @param {Promise<unknown>} promise
+ * @returns {Array}
  */
 export default async function attempt(promise) {
     let error = undefined;

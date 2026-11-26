@@ -1,33 +1,48 @@
-/**
- * Remove a value from the given array, returning a copy.
- *
- * @param {*} value
- * @returns {Object}
- */
-export default function match(value) {
-    const matchable = function () {
+class Matcher {
+    constructor(value) {
         this.value = value;
-        this.heap = new Map;
+        this.cases = new Map();
         this.defaultCallback = () => this.value;
     }
 
-    matchable.prototype.is = function (key, callback) {
-        this.heap.set( key, callback );
-
+    is(key, callbackFn) {
+        this.cases.set(key, callbackFn);
         return this;
-    };
+    }
 
-    matchable.prototype.default = function (callback) {
-        this.defaultCallback = callback;
-
+    default(callbackFn) {
+        this.defaultCallback = callbackFn;
         return this;
-    };
+    }
 
-    matchable.prototype.return = function () {
-        const callback = this.heap.has( this.value ) ? this.heap.get( this.value ) : this.defaultCallback;
+    return() {
+        const callbackFn = this.cases.get(this.value)
+            ?? this.defaultCallback;
 
-        return callback();
-    };
+        return callbackFn(this.value);
+    }
+}
 
-    return new matchable( value );
+/**
+ * Functional switch, match a value based on a key from a Map.
+ *
+ * @param {any} value
+ * @param {Object} cases
+ * @returns {Object}
+ */
+export default function match(value, cases = {}) {
+    const matcher = new Matcher(value);
+
+    if ( Object.keys( cases ).length > 0 ) {
+        Object.entries( cases ).forEach( ([key, callbackFn]) => {
+            if ( key === 'default' ) {
+                matcher.default( callbackFn );
+                return;
+            }
+
+            matcher.is( key, callbackFn );
+        } );
+    }
+
+    return matcher;
 }

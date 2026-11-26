@@ -8,7 +8,7 @@
  * @param {string|HTMLElement} selectorOrParent
  * @param {Function|string} callbackOrSelector
  * @param {Function|null} callbackOrNull
- * @returns {*}
+ * @returns {any}
  */
 export default function onEachElements(selectorOrParent, callbackOrSelector, callbackOrNull = null) {
     if ( typeof selectorOrParent === 'string' && typeof callbackOrSelector === 'function' && typeof callbackOrNull !== 'function' ) {

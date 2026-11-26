@@ -9,7 +9,7 @@
  * => click event has been removed from the button
  *
  * @param {EventTarget} element
- * @param {{}} listeners
+ * @param {Object} listeners
  */
 export default function addEventListeners(element, listeners) {
     return Object.fromEntries(

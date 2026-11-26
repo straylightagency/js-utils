@@ -9,3 +9,6 @@ export { default as unlessElementExists } from "./unlessElementExists.js";
 export { default as whenReady } from "./whenReady.js";
 export { default as whenResize } from "./whenResize.js";
 export { default as whenScroll } from "./whenScroll.js";
+export { default as whenIntersect } from './whenIntersect.js';
+export { default as whenVisible } from './whenVisible.js';
+export { default as whenMutation } from './whenMutation.js';

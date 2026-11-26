@@ -1,8 +1,8 @@
 /**
- * Limit the number of times a callback gets called in a certain time period.
+ * Limit the number of times a callback gets called in a certain time period. Returned function by the throttler allows to cancel the internal timer.
  *
  * @param {Function} callbackFn
- * @param {number} delay
+ * @param {Number} delay
  * @returns {(function(): void)|*}
  */
 export default function throttle(callbackFn, delay) {
@@ -24,5 +24,7 @@ export default function throttle(callbackFn, delay) {
             last = now;
             callbackFn.apply( context, args );
         }
+
+        return () => clearTimeout( timer );
     };
 }

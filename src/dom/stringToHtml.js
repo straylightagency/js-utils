@@ -1,7 +1,7 @@
 /**
  * @example stringToHtml('<p>my content</p>')
  *
- * @param {string} htmlString
+ * @param {String} htmlString
  * @returns {Document|DocumentFragment}
  */
 export default function stringToHtml(htmlString)

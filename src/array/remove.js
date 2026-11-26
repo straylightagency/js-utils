@@ -1,16 +1,19 @@
 /**
  * Remove a value from the given array, returning a copy.
  *
- * @param {[]} array
- * @param {*} value
- * @returns {*}
+ * @param {Array} array
+ * @param {any} value
+ * @returns {Array}
  */
 export default function remove(array, value) {
-    const index = array.indexOf( value );
+    const index = array.indexOf(value);
 
-    if ( index > -1 ) {
-        array.splice( index, 1 );
+    if (index === -1) {
+        return [...array];
     }
 
-    return array;
+    return [
+        ...array.slice(0, index),
+        ...array.slice(index + 1)
+    ];
 }

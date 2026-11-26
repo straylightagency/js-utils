@@ -1,12 +1,20 @@
-import get from "./get.js";
-
 /**
  * Get a value using a dot-notated key string
  *
- * @param {{}} object
- * @param {string} keys
- * @returns {*}
+ * @param {Object} object
+ * @param {String} path
+ * @returns {any}
  */
-export default function (object, keys) {
-    return get( object, keys ) !== undefined;
+export default function has(object, path) {
+    const keys = path.split('.');
+
+    return keys.every((key, index) => {
+        if (object == null || !Object.hasOwn(object, key)) {
+            return false;
+        }
+
+        object = object[key];
+
+        return index === keys.length - 1 || object != null;
+    });
 }

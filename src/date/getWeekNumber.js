@@ -5,7 +5,7 @@
  * => 12
  *
  * @param {Date} date
- * @returns {number}
+ * @returns {Number}
  */
 export default function getWeekNumber(date) {
     date.setHours(0, 0, 0, 0);

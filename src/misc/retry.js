@@ -12,11 +12,11 @@ import random from "../number/random.js";
  *  throw "Failed after 5 tries";
  * }, 5000, 10000 );
  *
- * @param {number} times
+ * @param {Number} times
  * @param {Function} callbackFn
- * @param {number} sleepMsMin
- * @param {number|null} sleepMsMax
- * @returns {Promise<unknown>}
+ * @param {Number} sleepMsMin
+ * @param {Number|null} sleepMsMax
+ * @returns {Promise<void>}
  */
 export default function (times, callbackFn, sleepMsMin = 100, sleepMsMax = null) {
     return new Promise( ( resolve, reject ) => {

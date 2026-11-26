@@ -2,22 +2,23 @@
  * Listen when the window is resized. Return a callback to cancel the event listener.
  *
  * @param {Function} callbackFn
- * @param {boolean} immediately
+ * @param {Boolean} immediately
  * @param {EventTarget} container
  * @returns {function(): void}
  */
-export default function whenResize(callbackFn, immediately = true, container = undefined) {
-    let ww, wh;
+export default function whenResize(callbackFn, immediately = true, container = window) {
+    const wrappedFn = event => {
+        const dimensions = container === window
+            ? {
+                width: window.innerWidth,
+                height: window.innerHeight
+            }
+            : {
+                width: container.clientWidth,
+                height: container.clientHeight
+            };
 
-    if ( ! container ) {
-        container = document;
-    }
-
-    const wrappedFn = e => {
-        ww = window.innerWidth;
-        wh = window.innerHeight;
-
-        callbackFn( { ww, wh }, e );
+        callbackFn(dimensions, event);
     };
 
     container.addEventListener( 'resize', wrappedFn );

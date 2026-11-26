@@ -6,8 +6,8 @@ import capitalFirst from "./capitalFirst.js";
  * @example capitalWords("The quick brown fox jumps over the lazy dog")
  * => "The Quick Brown Fox Jumps Over The Lazy Dog"
  *
- * @param {string} string
- * @returns {string}
+ * @param {String} string
+ * @returns {String}
  */
 export default function capitalWords(string) {
     const str_arr = string.split(' ');

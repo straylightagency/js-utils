@@ -4,8 +4,8 @@
  * @example capitalFirst("lazy dog")
  * => "Lazy dog"
  *
- * @param {string} string
- * @returns {string}
+ * @param {String} string
+ * @returns {String}
  */
 export default function capitalFirst(string) {
     string = string.toString();

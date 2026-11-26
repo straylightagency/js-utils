@@ -1,7 +1,7 @@
 /**
  * Stop the main process for a moment defined in milliseconds.
  *
- * @param {number} timeMs
+ * @param {Number} timeMs
  * @returns {Promise<*>}
  */
 export default function milliseconds(timeMs) {

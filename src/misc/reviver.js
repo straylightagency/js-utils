@@ -1,8 +1,9 @@
 /**
  * Function that can be used with JSON.parse to revive functions.
  *
- * @param {*} value
- * @returns {*}
+ * @deprecated
+ * @param {any} value
+ * @returns {any}
  */
 export default function reviver(value) {
     if ( typeof value === 'string' && value.indexOf('function ') === 0 ) {

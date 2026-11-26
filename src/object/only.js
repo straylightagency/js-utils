@@ -1,9 +1,9 @@
 /**
  * Return an object with specified keys.
  *
- * @param {{}} object
- * @param {[]} keys
- * @returns {{}}
+ * @param {Object} object
+ * @param {Array} keys
+ * @returns {Object}
  */
 export default function only(object, keys) {
     return Object.entries( object ).reduce( (acc, [key, value]) => {

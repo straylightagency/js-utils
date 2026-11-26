@@ -1,9 +1,11 @@
 /**
- * @param {number} value
- * @param {number} min
- * @param {number} max
- * @returns {number}
+ * Clamps a value within a range of values between a defined minimum bound and a maximum bound.
+ *
+ * @param {Number} value
+ * @param {Number} min
+ * @param {Number} max
+ * @returns {Number}
  */
-export default function random(value, min, max) {
+export default function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
 }

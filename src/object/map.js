@@ -1,9 +1,9 @@
 /**
  * Apply a map callback function over an object.
  *
- * @param {{}} object
+ * @param {Object} object
  * @param {Function} callbackFn
- * @returns {{}}
+ * @returns {Object}
  */
 export default function map(object, callbackFn) {
     return Object.keys( object ).reduce( ( result, key ) => {

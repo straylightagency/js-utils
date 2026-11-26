@@ -1,8 +1,9 @@
 /**
  * Decode a base64 value.
  *
- * @param {*} value
- * @return {string|null}
+ * @deprecated
+ * @param {any} value
+ * @returns {string|null}
  */
 export function decodeBase64(value) {
     try {
@@ -21,8 +22,9 @@ export function decodeBase64(value) {
 /**
  * Encode a value to base64.
  *
+ * @deprecated
  * @param value
- * @return {string|null}
+ * @returns {string|null}
  */
 export function encodeBase64(value) {
     try {
@@ -35,8 +37,9 @@ export function encodeBase64(value) {
 /**
  * Return true if given value is a base64.
  *
- * @param {*} value
- * @return {boolean}
+ * @deprecated
+ * @param {any} value
+ * @returns {Boolean}
  */
 export function isBase64(value) {
     try {

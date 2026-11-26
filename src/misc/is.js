@@ -1,32 +1,37 @@
-const toString = Object.prototype.toString;
-
-/**
- * Check if parameter is an object.
- *
- * @param {*} object
- * @returns {boolean}
- */
-export function isObject(object) {
-    return object !== null && typeof object === 'object'
-}
+import newIsObject from "../object/isObject.js";
+import newIsPlainObject from "../object/isPlainObject.js";
+import isType from "../object/isType.js";
 
 /**
  * Check if parameter is the given className.
  *
- * @param {*} object
- * @param {string} className
- * @returns {boolean}
+ * @deprecated use isType() instead.
+ * @param {any} object
+ * @param {String} className
+ * @returns {Boolean}
  */
 export function isClass(object, className) {
-    return isObject( object ) && toString.call( object ) === '[object ' + className + ']';
+    return isType( object, className );
+}
+
+/**
+ * Check if parameter is an object.
+ *
+ * @deprecated use isObject() from separated file instead.
+ * @param {any} object
+ * @returns {Boolean}
+ */
+export function isObject(object) {
+    return newIsObject(object);
 }
 
 /**
  * Check if parameter is a plain object.
  *
- * @param {*} object
- * @returns {boolean}
+ * @deprecated use isPlainObject() from separated file instead.
+ * @param {any} object
+ * @returns {Boolean}
  */
 export function isPlainObject(object) {
-    return isClass( object, 'Object' );
+    return newIsPlainObject(object);
 }
