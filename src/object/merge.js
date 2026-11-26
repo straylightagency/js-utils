@@ -1,4 +1,4 @@
-import {isPlainObject} from "../misc/index.js";
+import isPlainObject from "../object/isPlainObject.js";
 
 /**
  * Deep-merges source objects into a new object.
