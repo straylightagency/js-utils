@@ -55,6 +55,7 @@ export { default as retry } from "./misc/retry.js";
 export { default as seconds } from "./misc/seconds.js";
 export { default as sleep } from "./misc/sleep.js";
 export { default as throttle } from "./misc/throttle.js";
+
 export { default as functionReviver } from "./misc/reviver.js";
 export { default as functionReplacer } from "./misc/replacer.js";
 export { isClass } from "./misc/is.js";
@@ -79,4 +80,5 @@ export { default as whenVisible } from "./dom/whenVisible.js";
 /** DATE */
 export { default as getWeekNumber } from "./date/getWeekNumber.js";
 export { default as clone } from "./date/clone.js";
+
 export { default as dateReviver } from "./date/reviver.js";
